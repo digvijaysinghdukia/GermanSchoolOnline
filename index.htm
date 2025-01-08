@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>doctor</title>
+    <script src="https://kit.fontawesome.com/d1aea44d72.js" crossorigin="anonymous"></script>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body{
+            background-color: dcdad7;
+            display: grid;
+            grid-auto-flow: row;
+            scroll-behavior: smooth;
+
+        }
+        nav {
+            position: sticky;
+            top: 0px;
+            width: 100vw;
+            display: grid;
+            place-items: center;
+            background-color: #e8f1ff;
+        }
+
+        nav .nav-contener {
+            width: 90%;
+            display: grid;
+            grid-template-columns: 40%  auto;
+            place-items: center;
+            position: relative;
+            justify-items: stretch;
+        }
+
+        nav .logo {
+            width: 50%;
+            display: grid;
+            grid-template-columns: 20% auto;
+            place-items: center;
+            text-align: left;
+            color: linear-gradient(90deg, #208538, #007bff);;
+        }
+        h1{
+            background: -webkit-linear-gradient(90deg ,#b9b9b9, #000000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        nav .logo img {
+            height: 5rem;
+        }
+        
+
+        nav .links {
+            width: 100%;
+            display: grid;
+            grid-auto-flow: column;
+            place-items: center;
+            justify-items: end;
+        }
+
+        nav .links .a-link {
+            text-decoration: none;
+            font-weight: 500;
+            color: black;
+            transition-duration: 0.5s;
+        }
+
+        nav .links .a-link:hover {
+            background: linear-gradient(90deg, #208538, #007bff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .button {
+            background: linear-gradient(90deg, #28a745, #007bff);
+            padding: 1rem 1.5rem;
+            color: white;
+            text-decoration: none;
+            border-radius: 2rem;
+            border-top-left-radius: 0px;
+            font-weight: 600;
+            transition-duration: 0.5s;
+        }
+
+        .button:hover {
+            background: linear-gradient(90deg, #007bff, #28a745);
+            border-radius: 2rem;
+        }
+
+        /* Menu Button Styles */
+        .menu-button {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+
+        #checkbox {
+        display: none;
+        }
+
+        .toggle {
+        position: relative;
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition-duration: .5s;
+        }
+
+        .bars {
+        width: 100%;
+        height: 4px;
+        background-color: rgb(176, 92, 255);
+        border-radius: 4px;
+        }
+
+        #bar2 {
+        transition-duration: .8s;
+        }
+
+        #bar1,#bar3 {
+        width: 70%;
+        }
+
+        #checkbox:checked + .toggle .bars {
+        position: absolute;
+        transition-duration: .5s;
+        }
+
+        #checkbox:checked + .toggle #bar2 {
+        transform: scaleX(0);
+        transition-duration: .5s;
+        }
+
+        #checkbox:checked + .toggle #bar1 {
+        width: 100%;
+        transform: rotate(45deg);
+        transition-duration: .5s;
+        }
+
+        #checkbox:checked + .toggle #bar3 {
+        width: 100%;
+        transform: rotate(-45deg);
+        transition-duration: .5s;
+        }
+
+        #checkbox:checked + .toggle {
+        transition-duration: .5s;
+        transform: rotate(180deg);
+        }
+        /* Media Queries for Responsiveness */
+
+        @media (max-width: 1024px) {
+            nav .nav-contener {
+                grid-template-columns: 40% auto;
+            }
+
+            nav .links {
+                grid-auto-flow: row;
+                justify-items: center;
+                margin-top: 1rem;
+            }
+
+            nav .links .a-link {
+                margin: 0.5rem 0;
+            }
+
+            .button {
+                margin-top: 1rem;
+                padding: 0.8rem 1.2rem;
+            }
+
+            /* Show menu button on medium screens */
+            .menu-button {
+                display: flex;
+            }
+
+            .links {
+                display: none;
+                width: 100%;
+                grid-auto-flow: row;
+                justify-items: center;
+                background-color: #e8f1ff;
+                position: sticky;
+                top: 0px;
+                left: 0;
+                right: 0;
+                padding: 1rem 0;
+            }
+
+            .links a {
+                font-size: 1.2rem;
+                padding: 0.5rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #links {
+                display: none;
+                
+            }
+            nav .nav-contener {
+                grid-template-columns: 100%;
+            }
+
+            nav .logo img {
+                height: 4rem;
+            }
+
+            .button {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .links {
+                display: none;
+            }
+            nav .logo img {
+                height: 3.5rem;
+            }
+
+            .button {
+                padding: 0.6rem 1.2rem;
+            }
+        }
+
+
+
+        .hero-section{
+            width: 100vw;
+            height: fit-content;
+            background-image: linear-gradient(#e8f1ff, #e8f1ff, white);
+            display: grid;
+            grid-template-columns: 40% auto;
+            place-items: center;
+            justify-items: end;
+        }
+        .hero-section .hero-left{
+            width: 80%;
+            display: grid;
+            grid-auto-flow: row;
+            row-gap: 3rem;
+            
+        }
+        .hero-left h2{
+            font-size: xxx-large;
+            font-weight: 300;
+        }
+        .hero-left p{
+            width: 80%;
+            font-size: large;
+        }
+        .hero-left p span{
+            text-align: right;
+            font-family: "Reenie Beanie", cursive;
+            font-weight: 400;
+            font-style: normal;
+            
+            font-size: xx-large;
+        }
+        .hero-right{
+            width: 100%;
+            display: grid;
+            place-items: center;
+            background-image: url(./media/dots.webp);
+            background-repeat: no-repeat;
+            background-size: 60%;
+            background-position-y: center;
+        }
+        @media (max-width: 700px) {
+            .hero-section{
+                grid-template-columns: 100%;
+                overflow-y: hidden;
+                padding: 1rem;
+                row-gap: 1rem;
+            }
+            .hero-left h2{
+                font-size: xx-large;
+                font-weight: 300;
+            }
+            .h-img img{
+                width: 80vw;
+                height: auto;
+            }
+            .hero-left p{
+                width: 90%;
+                font-size: medium;
+            }
+            .hero-section .hero-left{
+                width: 90%;
+            }
+        }
+
+
+        .best-fa{
+            width: 100vw;
+            height: auto;
+            display: grid;
+            place-items: center;
+            padding: 3rem;
+
+        }
+        .best-fa-con{
+            width: 90%;
+            display: grid;
+            grid-template-columns: 60% auto;
+            place-items: center;
+        }
+
+        .best-fa .l-side{
+            width: 100%;
+            height: fit-content;
+            display: grid;
+            text-align: left;
+            place-items: center;
+            
+        }
+        .b-l-con{
+            width: 80%;
+            height: fit-content;
+            display: grid;
+            grid-auto-flow: row;
+            row-gap: 2rem;
+            
+        }
+        .b-l-con h3{
+            font-size: xxx-large;
+            font-weight: 300;
+        }
+
+        .b-l-con p{
+            width: 80%;
+        }
+        .b-l-con ul{
+            list-style: none;
+        }
+
+        .r-side{
+            width: 100%;
+            display: grid;
+            place-items: center;
+        }
+        .img-for-best{
+            width: 18rem;
+            height: 20rem;
+            background: linear-gradient(90deg, #007bff, #28a745);
+            border-radius: 2rem;
+            border-top-left-radius: 0px;
+        }
+        @media (max-width: 700px) {
+            .best-fa-con{
+                grid-template-columns: 100%;
+                row-gap: 2rem;
+            }
+            .b-l-con{
+                width: 100%;
+            }
+            .b-l-con h3{
+                font-size: xx-large;
+            }
+            .b-l-con p{
+            width: 100%;
+            }
+            .img-for-best {
+                width: 14rem;
+                height: 16rem;
+            }
+            .img-for-best img{
+                width: 80vw;
+            }
+        }
+
+
+        
+
+        .choose-us{
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .choose-us-contener{
+            width: 100%;
+            height: 90%;
+            display: grid;
+            grid-template-columns: 50% auto;
+            place-items: center;
+            background-image: linear-gradient(white, #e8f1ff, white);
+            padding: 2rem;
+            overflow: hidden;
+        }
+        .choose-us-text{
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-rows: 10% auto;
+            place-items: center;
+        }
+        .choose-us-text h3{
+            font-size: xxx-large;
+            font-weight: 400;
+        }
+        .text-list{
+            width: 80%;
+            display: grid;
+            place-items: center;
+            grid-auto-flow: row;
+            row-gap: 1rem;
+        }
+        .list{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 10% auto;
+            place-items: center;
+        }
+        .number{
+            font-size: 5rem;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.346);
+            display: grid;
+            place-items: center;
+        }
+
+
+
+        @media (max-width: 700px) {
+            .choose-us{
+            width: 100vw;
+            height: fit-content;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            }
+            .choose-us-contener{
+                grid-template-columns: 100%;
+                row-gap: 2rem;
+                height: 100%;
+            }
+            .choose-us-img img{
+                width: 80vw;
+                height: auto;
+            }
+            .choose-us-text h3{
+                font-size: xx-large;
+            }
+            .text-list{
+                width: 90%;
+            }
+            .list{
+                grid-template-columns: 20% auto;
+            }
+            .choose-us-text{
+                grid-template-rows: 15% auto;
+            }
+            .number-text{
+                font-size: smaller;
+            }
+        }
+
+
+
+
+        .appointment{
+            width: 100vw;
+            height: fit-content;
+            padding: 2rem;
+            display: grid;
+            place-items: center;
+        }
+        .a-list{
+            width: 1000px;
+            display: grid;
+            place-items: center;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 1rem;
+            column-gap: 3rem;
+        }
+        .a-list .card{
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-rows: auto auto auto;
+            place-items: center;
+            row-gap: 2rem;
+            border: 2px solid #007bff;
+            padding: 2rem;
+            border-radius: 2rem;
+            transition-duration: 400ms;
+        }
+        .em-card{
+            box-shadow: 0px 0px 10px #007bff;
+            
+            
+        }
+        .em-card:hover{
+            border: 2px solid red;
+            box-shadow: 0px 0px 10px rgb(255, 52, 52);
+        }
+        .a-list .card h3{
+            font-size: x-large;
+            text-align: center;
+            
+        }
+        .a-list .card h3 span{
+            font-size: medium;
+            color: rgb(80, 80, 80);
+        }
+        #em-head{
+            color: red;
+        }
+        .a-list .card ul{
+            list-style: none;
+            font-size: small;
+            font-weight: 500;
+        }
+        .a-list .card li span{
+            color: green;
+            font-size: x-large;
+        }
+        .a-list .card li .cls{
+            color: red;
+        }
+        .a-list .card a{
+            text-decoration: none;
+            padding: .7rem 1.3rem;
+            background-color: #007bff;
+            color: white;
+            font-weight: 600;
+            border-radius: 2rem;
+        }
+        .a-list .card .em-a{
+            background-color: rgb(255, 52, 52);
+        }
+
+        @media (max-width: 700px) {
+            .a-list{
+                width: 100%;
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                grid-template-columns: 100%;
+                row-gap: 1rem;
+                column-gap: 3rem;
+            }
+        }
+
+
+
+
+
+
+
+        .faq-container {
+            width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .faq-header h2 {
+            color: #333;
+            font-size: 28px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .faq-item h3 {
+            color: #007BFF;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .faq-item p {
+            display: none;
+            color: #555;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        .faq-item.open p {
+            display: block;
+        }
+
+        .faq-item.open h3 {
+            color: #0056b3;
+        }
+
+        @media (max-width: 700px) {
+            .faq-container {
+                width: 100%;
+            }
+            .faq-item h3 {
+                font-size: medium;
+            }
+        }
+
+
+
+        footer {
+            background-color: #007BFF;
+            color: white;
+            padding: 40px 20px;
+        }
+    
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+            gap: 20px;
+        }
+    
+        .footer-container > div {
+            flex: 1 1 200px;
+            min-width: 200px;
+        }
+    
+        .footer-logo img {
+            max-width: 100px;
+        }
+    
+        .footer-logo p {
+            margin-top: 10px;
+            font-size: 14px;
+            font-style: italic;
+        }
+    
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+    
+        .footer-links li {
+            margin: 10px 0;
+        }
+    
+        .footer-links a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
+    
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+    
+        .footer-contact p, .footer-contact i {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+    
+        .footer-contact i {
+            margin-right: 10px;
+        }
+    
+        .footer-social a {
+            text-decoration: none;
+            color: white;
+            margin-right: 15px;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+    
+        .footer-social a:hover {
+            color: #FFD700;
+        }
+    
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 10px;
+        }
+    
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+    
+            .footer-container > div {
+                flex: 1 1 100%;
+            }
+    
+            .footer-logo img {
+                max-width: 80px;
+            }
+        }
+
+/* Schedule and Contact Section */
+.schedule-contact {
+    background-color: #92bffa;
+    padding: 40px 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.schedule-list,
+.contact {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.schedule-list h3,
+.contact h3 {
+    font-size: 20px;
+    color: #007BFF;
+    margin-bottom: 15px;
+}
+
+/* Schedule List Styling */
+.schedule-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.schedule-list ul li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 0;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.schedule-list ul li:last-child {
+    border-bottom: none;
+}
+
+.schedule-list .day {
+    font-weight: bold;
+    color: #333;
+}
+
+.schedule-list .time {
+    text-align: right;
+    color: #007BFF;
+    font-weight: 500;
+}
+
+/* Contact Section Styling */
+.contact p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact i {
+    margin-right: 10px;
+    color: #007BFF;
+}
+
+/* Social Media Section */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links h3 {
+    font-size: 18px;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    margin-right: 15px;
+    font-size: 20px;
+    color: #007BFF;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-contener">
+            <div class="logo">
+                <a href="#logo"><img src="./media/Healthy-logo-or-medical-logo-on-transparent-background-PNG-removebg-preview.webp" alt="logo"> </a>
+                <h1>Dr. Vijaya</h1>
+            </div>
+            
+            <div id="links" class="links">
+                <a class="a-link" href="#Home">Home</a>
+                <a class="a-link" href="#About-Me">About Me</a>
+                <a class="a-link" href="#Services">Services</a>
+                <a class="a-link" href="#Course-Packages">Course Packages!</a>
+                <a class="a-link" href="#Contact">Contact</a>
+                <a class="button" href="#Course-Packages">Appointment</a>
+            </div>
+            <div class="menu-button" >
+                <input type="checkbox" id="checkbox" onclick="toggleMenu()">
+                <label for="checkbox" class="toggle">
+                    <div class="bars" id="bar1"></div>
+                    <div class="bars" id="bar2"></div>
+                    <div class="bars" id="bar3"></div>
+              </label>
+            </div>
+        </div>
+    </nav>
+    <script>
+        function toggleMenu() {
+            const links = document.querySelector('.links');
+            links.style.display = links.style.display === 'grid' ? 'none' : 'grid';
+        }
+
+    </script>
+
+<section id="Home" class="hero-section">
+    <div class="hero-right">
+        <div class="h-img">
+            <img src="./media/doctor.webp" alt="">
+        </div>
+    </div>
+    <div class="hero-left">
+        <h2>Best Outcome <br><b>Every Patient!</b></h2>
+        <p>Welcome to my clinic! I am Dr. Vijaya Singh, a dedicated physician with over 3 years of experience in providing compassionate care and tailored treatments to patients. My mission is to ensure the best health outcomes for every individual by combining medical expertise with a personal touch.  
+        <br><br><span>Dr. Vijaya Singh</span>
+        </p>
+        <span><a class="button" href="#Course-Packages">Appointment</a></span>
+    </div>
+</section>
+
+
+
+
+<section id="About-Me" class="choose-us">
+    <div class="choose-us-contener">
+        <div class="choose-us-img">
+            <img src="./media/d-left.webp" alt="">
+        </div>
+        <div class="choose-us-text">
+            <h3>Why <b>Choose Us</b>?</h3>
+            <div class="text-list">
+                <div class="list">
+                    <div class="number">1</div>
+                    <div class="number-text">
+                        <h4>Expertise You Can Trust</h4>
+                        <p>With over 15 years of experience, we provide reliable and top-notch medical care for all your health needs.</p>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="number">2</div>
+                    <div class="number-text">
+                        <h4>Patient-Centric Approach</h4>
+                        <p>We prioritize your well-being by offering personalized care tailored to your specific health requirements.</p>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="number">3</div>
+                    <div class="number-text">
+                        <h4>Advanced Facilities</h4>
+                        <p>Our state-of-the-art equipment and modern facilities ensure accurate diagnoses and effective treatments.</p>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="number">4</div>
+                    <div class="number-text">
+                        <h4>Compassionate Care</h4>
+                        <p>Our team of professionals is committed to providing a warm and supportive environment for every patient.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Services" class="best-fa">
+    <div class="best-fa-con">
+        <div class="l-side">
+            <div class="b-l-con">
+                <h3>We Are <br><b>the Best Clinic in the City</b></h3>
+                <p>Our clinic is recognized for delivering exceptional healthcare services with an unwavering commitment to quality and patient satisfaction. Experience top-tier medical care in a trusted and welcoming environment.</p>
+                <ul>
+                    <b>
+                        <li>&#11162; Comprehensive healthcare services</li>
+                        <li>&#11162; Highly experienced and skilled doctors</li>
+                        <li>&#11162; Accurate and timely lab reports</li>
+                        <li>&#11162; Accredited and ISO certified</li>
+                    </b>
+                </ul>
+                <span><a class="button" href="#Course-Packages">Appointment</a></span>
+            </div>
+        </div>
+        <div class="r-side">
+            <div class="img-for-best">
+                <img src="./media/doctor2.webp" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <section id="Course-Packages" class="appointment">
+        <div class="a-list">
+            <div class="card">
+                <h3>Appointment <br> <span> Price: ₹300 </span></h3>
+                <ul>
+                    <li> <span>&#10004; </span> Health Assessment & Consultation</li>
+                    <li> <span>&#10004; </span> Routine Health Check-up</li>
+                    <li> <span>&#10004; </span> Medication & Treatment Guidance</li>
+                    <li> <span>&#10004; </span> Diagnostic Report Analysis</li>
+                    <li> <span>&#10004; </span> queue appointment</li>
+                    <li> <span class="cls">&#10008; </span> Direct Appointment</li>
+                    <li> <span class="cls">&#10008; </span> Waiting Time</li>
+                </ul>
+                <a href="https://wa.me/918302160041?text=मुझे%20हेल्थ%20चेक-अप%20और%20कंसल्टेशन%20के%20लिए%20अपॉइंटमेंट%20चाहिए।%20कृपया%20समय%20बताएं।%20धन्यवाद!" target="_blank">Book Now</a>              
+            </div>
+            <div class="card em-card">
+                <h3 id="em-head">Emergency <br> <span> Price: ₹500 </span></h3>
+                <ul>
+                    <li> <span>&#10004; </span> Health Assessment & Consultation</li>
+                    <li> <span>&#10004; </span> Routine Health Check-up</li>
+                    <li> <span>&#10004; </span> Medication & Treatment Guidance</li>
+                    <li> <span>&#10004; </span> Diagnostic Report Analysis</li>
+                    <li> <span>&#10004; </span> queue appointment</li>
+                    <li> <span>&#10004; </span> Direct Appointment</li>
+                    <li> <span>&#10004; </span>No Waiting Time</li>
+                </ul>
+                <a href="tel:+918302160041" class="em-a">Direct Call</a>              
+            </div>
+            <div class="card">
+                <h3>D-Appointment <br> <span> Price: ₹400 </span></h3>
+                <ul>
+                    <li> <span>&#10004; </span> Health Assessment & Consultation</li>
+                    <li> <span>&#10004; </span> Routine Health Check-up</li>
+                    <li> <span>&#10004; </span> Medication & Treatment Guidance</li>
+                    <li> <span>&#10004; </span> Diagnostic Report Analysis</li>
+                    <li> <span>&#10004; </span> queue appointment</li>
+                    <li> <span>&#10004; </span> Direct Appointment</li>
+                    <li> <span class="cls">&#10008; </span>Reduced Waiting Duration</li>
+
+                </ul>
+                <a href="https://wa.me/918302160041?text=मुझे%20हेल्थ%20चेक-अप%20और%20कंसल्टेशन%20के%20लिए%20अपॉइंटमेंट%20चाहिए।%20कृपया%20समय%20बताएं।%20धन्यवाद!">Book Now</a>              
+            </div>            
+        </div>
+    </section>
+
+    <section id="Contact" class="schedule-contact">
+        <div class="container">
+            <!-- Schedule Section -->
+            <div class="schedule-list">
+                <h3>Working Hours</h3>
+                <ul>
+                    <li>
+                        <span class="day">Monday:</span>
+                        <span class="time">9:00 AM - 7:00 PM</span>
+                    </li>
+                    <li>
+                        <span class="day">Tuesday:</span>
+                        <span class="time">9:00 AM - 7:00 PM</span>
+                    </li>
+                    <li>
+                        <span class="day">Wednesday:</span>
+                        <span class="time">9:00 AM - 7:00 PM</span>
+                    </li>
+                    <li>
+                        <span class="day">Thursday:</span>
+                        <span class="time">9:00 AM - 7:00 PM</span>
+                    </li>
+                    <li>
+                        <span class="day">Friday:</span>
+                        <span class="time">9:00 AM - 7:00 PM</span>
+                    </li>
+                    <li>
+                        <span class="day">Saturday:</span>
+                        <span class="time">10:00 AM - 5:00 PM</span>
+                    </li>
+                    <li>
+                        <span class="day">Sunday:</span>
+                        <span class="time">Closed</span>
+                    </li>
+                </ul>
+            </div>
+    
+            <!-- Contact Section -->
+            <div class="contact">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                <p><i class="fas fa-envelope"></i> contact@healthyclinic.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Sikar, Rajasthan, India</p>
+    
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <h3>Follow Us</h3>
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+    
+
+
+
+    <div class="faq-container">
+        <div class="faq-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+    
+        <div class="faq-item">
+            <h3>Can I book an appointment online?</h3>
+            <p>Yes, you can easily book an appointment through our website or by calling us.</p>
+        </div>
+    
+        <div class="faq-item">
+            <h3>What should I bring for my first appointment?</h3>
+            <p>Please bring your previous medical reports, a list of current medications, and a valid ID proof.</p>
+        </div>
+    
+        <div class="faq-item">
+            <h3>What happens during an appointment?</h3>
+            <p>The doctor will assess your health concerns, review your medical history, and plan any necessary tests or treatments.</p>
+        </div>
+    
+        <div class="faq-item">
+            <h3>What are the clinic hours?</h3>
+            <p>Our clinic is open Monday to Saturday, from 9 AM to 7 PM.</p>
+        </div>
+    
+        <div class="faq-item">
+            <h3>Do you accept insurance cards?</h3>
+            <p>Yes, we accept insurance cards. Please share your insurance details in advance.</p>
+        </div>
+    </div>
+    
+
+    
+
+    
+    
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="footer-container">
+            <!-- Logo and Tagline -->
+            <div class="footer-logo">
+                <img src="./media/Healthy-logo-or-medical-logo-on-transparent-background-PNG-removebg-preview.webp" alt="Footer Logo">
+                <p>Your Health, Our Priority</p>
+            </div>
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">My Services</a></li>
+                    <li><a href="#">Course Packages</a></li>
+                    <li><a href="#">Appointment</a></li>
+                </ul>
+            </div>
+            <!-- Contact Info -->
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                <p><i class="fas fa-envelope"></i> support@healthyclinic.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Sikar, Rajasthan, India</p>
+            </div>
+            <!-- Social Media -->
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Healthy Clinic. All Rights Reserved. | Design by Infinity Corporation</p>
+        </div>
+    </footer>
+    
+
+    
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                faqItems.forEach(faq => {
+                    if (faq !== item) faq.classList.remove('open');
+                });
+                item.classList.toggle('open');
+            });
+        });
+    </script>
+    </script>
+</body>
+</html>
