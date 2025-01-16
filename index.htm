@@ -3,837 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>doctor</title>
+    <title>GermanSchoolOnline</title>
     <script src="https://kit.fontawesome.com/d1aea44d72.js" crossorigin="anonymous"></script>
-    <style>
+    <link rel="stylesheet" href="style.css">
+     <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-        @import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
-
-        *{
-            padding: 0px;
-            margin: 0px;
-            box-sizing: border-box;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            scroll-behavior: smooth;
-        }
-        body{
-            background-color: dcdad7;
-            display: grid;
-            grid-auto-flow: row;
-            scroll-behavior: smooth;
-
-        }
-        nav {
-            position: sticky;
-            top: 0px;
-            width: 100vw;
-            display: grid;
-            place-items: center;
-            background-color: #e8f1ff;
-        }
-
-        nav .nav-contener {
-            width: 90%;
-            display: grid;
-            grid-template-columns: 40%  auto;
-            place-items: center;
-            position: relative;
-            justify-items: stretch;
-        }
-
-        nav .logo {
-            width: 50%;
-            display: grid;
-            grid-template-columns: 20% auto;
-            place-items: center;
-            text-align: left;
-            color: linear-gradient(90deg, #208538, #007bff);;
-        }
-        h1{
-            background: -webkit-linear-gradient(90deg ,#b9b9b9, #000000);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        nav .logo img {
-            height: 5rem;
-        }
-        
-
-        nav .links {
-            width: 100%;
-            display: grid;
-            grid-auto-flow: column;
-            place-items: center;
-            justify-items: end;
-        }
-
-        nav .links .a-link {
-            text-decoration: none;
-            font-weight: 500;
-            color: black;
-            transition-duration: 0.5s;
-        }
-
-        nav .links .a-link:hover {
-            background: linear-gradient(90deg, #208538, #007bff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .button {
-            background: linear-gradient(90deg, #28a745, #007bff);
-            padding: 1rem 1.5rem;
-            color: white;
-            text-decoration: none;
-            border-radius: 2rem;
-            border-top-left-radius: 0px;
-            font-weight: 600;
-            transition-duration: 0.5s;
-        }
-
-        .button:hover {
-            background: linear-gradient(90deg, #007bff, #28a745);
-            border-radius: 2rem;
-        }
-
-        /* Menu Button Styles */
-        .menu-button {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-
-
-        #checkbox {
-        display: none;
-        }
-
-        .toggle {
-        position: relative;
-        width: 2rem;
-        height: 2rem;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        transition-duration: .5s;
-        }
-
-        .bars {
-        width: 100%;
-        height: 4px;
-        background-color: rgb(176, 92, 255);
-        border-radius: 4px;
-        }
-
-        #bar2 {
-        transition-duration: .8s;
-        }
-
-        #bar1,#bar3 {
-        width: 70%;
-        }
-
-        #checkbox:checked + .toggle .bars {
-        position: absolute;
-        transition-duration: .5s;
-        }
-
-        #checkbox:checked + .toggle #bar2 {
-        transform: scaleX(0);
-        transition-duration: .5s;
-        }
-
-        #checkbox:checked + .toggle #bar1 {
-        width: 100%;
-        transform: rotate(45deg);
-        transition-duration: .5s;
-        }
-
-        #checkbox:checked + .toggle #bar3 {
-        width: 100%;
-        transform: rotate(-45deg);
-        transition-duration: .5s;
-        }
-
-        #checkbox:checked + .toggle {
-        transition-duration: .5s;
-        transform: rotate(180deg);
-        }
-        /* Media Queries for Responsiveness */
-
-        @media (max-width: 1024px) {
-            nav .nav-contener {
-                grid-template-columns: 40% auto;
-            }
-
-            nav .links {
-                grid-auto-flow: row;
-                justify-items: center;
-                margin-top: 1rem;
-            }
-
-            nav .links .a-link {
-                margin: 0.5rem 0;
-            }
-
-            .button {
-                margin-top: 1rem;
-                padding: 0.8rem 1.2rem;
-            }
-
-            /* Show menu button on medium screens */
-            .menu-button {
-                display: flex;
-            }
-
-            .links {
-                display: none;
-                width: 100%;
-                grid-auto-flow: row;
-                justify-items: center;
-                background-color: #e8f1ff;
-                position: sticky;
-                top: 0px;
-                left: 0;
-                right: 0;
-                padding: 1rem 0;
-            }
-
-            .links a {
-                font-size: 1.2rem;
-                padding: 0.5rem;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            #links {
-                display: none;
-                
-            }
-            nav .nav-contener {
-                grid-template-columns: 100%;
-            }
-
-            nav .logo img {
-                height: 4rem;
-            }
-
-            .button {
-                width: 80%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .links {
-                display: none;
-            }
-            nav .logo img {
-                height: 3.5rem;
-            }
-
-            .button {
-                padding: 0.6rem 1.2rem;
-            }
-        }
-
-
-
-        .hero-section{
-            width: 100vw;
-            height: fit-content;
-            background-image: linear-gradient(#e8f1ff, #e8f1ff, white);
-            display: grid;
-            grid-template-columns: 40% auto;
-            place-items: center;
-            justify-items: end;
-        }
-        .hero-section .hero-left{
-            width: 80%;
-            display: grid;
-            grid-auto-flow: row;
-            row-gap: 3rem;
-            
-        }
-        .hero-left h2{
-            font-size: xxx-large;
-            font-weight: 300;
-        }
-        .hero-left p{
-            width: 80%;
-            font-size: large;
-        }
-        .hero-left p span{
-            text-align: right;
-            font-family: "Reenie Beanie", cursive;
-            font-weight: 400;
-            font-style: normal;
-            
-            font-size: xx-large;
-        }
-        .hero-right{
-            width: 100%;
-            display: grid;
-            place-items: center;
-            background-image: url(./media/dots.webp);
-            background-repeat: no-repeat;
-            background-size: 60%;
-            background-position-y: center;
-        }
-        @media (max-width: 700px) {
-            .hero-section{
-                grid-template-columns: 100%;
-                overflow-y: hidden;
-                padding: 1rem;
-                row-gap: 1rem;
-            }
-            .hero-left h2{
-                font-size: xx-large;
-                font-weight: 300;
-            }
-            .h-img img{
-                width: 80vw;
-                height: auto;
-            }
-            .hero-left p{
-                width: 90%;
-                font-size: medium;
-            }
-            .hero-section .hero-left{
-                width: 90%;
-            }
-        }
-
-
-        .best-fa{
-            width: 100vw;
-            height: auto;
-            display: grid;
-            place-items: center;
-            padding: 3rem;
-
-        }
-        .best-fa-con{
-            width: 90%;
-            display: grid;
-            grid-template-columns: 60% auto;
-            place-items: center;
-        }
-
-        .best-fa .l-side{
-            width: 100%;
-            height: fit-content;
-            display: grid;
-            text-align: left;
-            place-items: center;
-            
-        }
-        .b-l-con{
-            width: 80%;
-            height: fit-content;
-            display: grid;
-            grid-auto-flow: row;
-            row-gap: 2rem;
-            
-        }
-        .b-l-con h3{
-            font-size: xxx-large;
-            font-weight: 300;
-        }
-
-        .b-l-con p{
-            width: 80%;
-        }
-        .b-l-con ul{
-            list-style: none;
-        }
-
-        .r-side{
-            width: 100%;
-            display: grid;
-            place-items: center;
-        }
-        .img-for-best{
-            width: 18rem;
-            height: 20rem;
-            background: linear-gradient(90deg, #007bff, #28a745);
-            border-radius: 2rem;
-            border-top-left-radius: 0px;
-        }
-        @media (max-width: 700px) {
-            .best-fa-con{
-                grid-template-columns: 100%;
-                row-gap: 2rem;
-            }
-            .b-l-con{
-                width: 100%;
-            }
-            .b-l-con h3{
-                font-size: xx-large;
-            }
-            .b-l-con p{
-            width: 100%;
-            }
-            .img-for-best {
-                width: 14rem;
-                height: 16rem;
-            }
-            .img-for-best img{
-                width: 80vw;
-            }
-        }
-
-
-        
-
-        .choose-us{
-            width: 100vw;
-            height: 100vh;
-            display: grid;
-            place-items: center;
-        }
-        .choose-us-contener{
-            width: 100%;
-            height: 90%;
-            display: grid;
-            grid-template-columns: 50% auto;
-            place-items: center;
-            background-image: linear-gradient(white, #e8f1ff, white);
-            padding: 2rem;
-            overflow: hidden;
-        }
-        .choose-us-text{
-            width: 100%;
-            height: 100%;
-            display: grid;
-            grid-template-rows: 10% auto;
-            place-items: center;
-        }
-        .choose-us-text h3{
-            font-size: xxx-large;
-            font-weight: 400;
-        }
-        .text-list{
-            width: 80%;
-            display: grid;
-            place-items: center;
-            grid-auto-flow: row;
-            row-gap: 1rem;
-        }
-        .list{
-            width: 100%;
-            display: grid;
-            grid-template-columns: 10% auto;
-            place-items: center;
-        }
-        .number{
-            font-size: 5rem;
-            font-weight: 600;
-            color: rgba(0, 0, 0, 0.346);
-            display: grid;
-            place-items: center;
-        }
-
-
-
-        @media (max-width: 700px) {
-            .choose-us{
-            width: 100vw;
-            height: fit-content;
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-            }
-            .choose-us-contener{
-                grid-template-columns: 100%;
-                row-gap: 2rem;
-                height: 100%;
-            }
-            .choose-us-img img{
-                width: 80vw;
-                height: auto;
-            }
-            .choose-us-text h3{
-                font-size: xx-large;
-            }
-            .text-list{
-                width: 90%;
-            }
-            .list{
-                grid-template-columns: 20% auto;
-            }
-            .choose-us-text{
-                grid-template-rows: 15% auto;
-            }
-            .number-text{
-                font-size: smaller;
-            }
-        }
-
-
-
-
-        .appointment{
-            width: 100vw;
-            height: fit-content;
-            padding: 2rem;
-            display: grid;
-            place-items: center;
-        }
-        .a-list{
-            width: 1000px;
-            display: grid;
-            place-items: center;
-            grid-template-columns: repeat(3, 1fr);
-            row-gap: 1rem;
-            column-gap: 3rem;
-        }
-        .a-list .card{
-            width: 100%;
-            height: 100%;
-            display: grid;
-            grid-template-rows: auto auto auto;
-            place-items: center;
-            row-gap: 2rem;
-            border: 2px solid #007bff;
-            padding: 2rem;
-            border-radius: 2rem;
-            transition-duration: 400ms;
-        }
-        .em-card{
-            box-shadow: 0px 0px 10px #007bff;
-            
-            
-        }
-        .em-card:hover{
-            border: 2px solid red;
-            box-shadow: 0px 0px 10px rgb(255, 52, 52);
-        }
-        .a-list .card h3{
-            font-size: x-large;
-            text-align: center;
-            
-        }
-        .a-list .card h3 span{
-            font-size: medium;
-            color: rgb(80, 80, 80);
-        }
-        #em-head{
-            color: red;
-        }
-        .a-list .card ul{
-            list-style: none;
-            font-size: small;
-            font-weight: 500;
-        }
-        .a-list .card li span{
-            color: green;
-            font-size: x-large;
-        }
-        .a-list .card li .cls{
-            color: red;
-        }
-        .a-list .card a{
-            text-decoration: none;
-            padding: .7rem 1.3rem;
-            background-color: #007bff;
-            color: white;
-            font-weight: 600;
-            border-radius: 2rem;
-        }
-        .a-list .card .em-a{
-            background-color: rgb(255, 52, 52);
-        }
-
-        @media (max-width: 700px) {
-            .a-list{
-                width: 100%;
-                padding-top: 2rem;
-                padding-bottom: 2rem;
-                grid-template-columns: 100%;
-                row-gap: 1rem;
-                column-gap: 3rem;
-            }
-        }
-
-
-
-
-
-
-
-        .faq-container {
-            width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-        }
-
-        .faq-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .faq-header h2 {
-            color: #333;
-            font-size: 28px;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #ddd;
-            padding: 15px 0;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .faq-item:hover {
-            background-color: #f9f9f9;
-        }
-
-        .faq-item h3 {
-            color: #007BFF;
-            font-size: 18px;
-            margin: 0;
-        }
-
-        .faq-item p {
-            display: none;
-            color: #555;
-            margin-top: 10px;
-            line-height: 1.6;
-        }
-
-        .faq-item.open p {
-            display: block;
-        }
-
-        .faq-item.open h3 {
-            color: #0056b3;
-        }
-
-        @media (max-width: 700px) {
-            .faq-container {
-                width: 100%;
-            }
-            .faq-item h3 {
-                font-size: medium;
-            }
-        }
-
-
-
-        footer {
-            background-color: #007BFF;
-            color: white;
-            padding: 40px 20px;
-        }
-    
-        .footer-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: auto;
-            gap: 20px;
-        }
-    
-        .footer-container > div {
-            flex: 1 1 200px;
-            min-width: 200px;
-        }
-    
-        .footer-logo img {
-            max-width: 100px;
-        }
-    
-        .footer-logo p {
-            margin-top: 10px;
-            font-size: 14px;
-            font-style: italic;
-        }
-    
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-    
-        .footer-links li {
-            margin: 10px 0;
-        }
-    
-        .footer-links a {
-            text-decoration: none;
-            color: white;
-            transition: color 0.3s;
-        }
-    
-        .footer-links a:hover {
-            color: #FFD700;
-        }
-    
-        .footer-contact p, .footer-contact i {
-            margin: 10px 0;
-            display: flex;
-            align-items: center;
-        }
-    
-        .footer-contact i {
-            margin-right: 10px;
-        }
-    
-        .footer-social a {
-            text-decoration: none;
-            color: white;
-            margin-right: 15px;
-            font-size: 20px;
-            transition: color 0.3s;
-        }
-    
-        .footer-social a:hover {
-            color: #FFD700;
-        }
-    
-        .footer-bottom {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 10px;
-        }
-    
-        @media (max-width: 768px) {
-            .footer-container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-    
-            .footer-container > div {
-                flex: 1 1 100%;
-            }
-    
-            .footer-logo img {
-                max-width: 80px;
-            }
-        }
-
-/* Schedule and Contact Section */
-.schedule-contact {
-    background-color: #92bffa;
-    padding: 40px 20px;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.schedule-list,
-.contact {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-.schedule-list h3,
-.contact h3 {
-    font-size: 20px;
-    color: #007BFF;
-    margin-bottom: 15px;
-}
-
-/* Schedule List Styling */
-.schedule-list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.schedule-list ul li {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 10px 0;
-    border-bottom: 1px solid #e4e4e4;
-}
-
-.schedule-list ul li:last-child {
-    border-bottom: none;
-}
-
-.schedule-list .day {
-    font-weight: bold;
-    color: #333;
-}
-
-.schedule-list .time {
-    text-align: right;
-    color: #007BFF;
-    font-weight: 500;
-}
-
-/* Contact Section Styling */
-.contact p {
-    font-size: 16px;
-    color: #333;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-}
-
-.contact i {
-    margin-right: 10px;
-    color: #007BFF;
-}
-
-/* Social Media Section */
-.social-links {
-    margin-top: 20px;
-}
-
-.social-links h3 {
-    font-size: 18px;
-    color: #007BFF;
-    margin-bottom: 10px;
-}
-
-.social-links a {
-    margin-right: 15px;
-    font-size: 20px;
-    color: #007BFF;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: #0056b3;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-    </style>
 </head>
 <body>
     <nav>
         <div class="nav-contener">
             <div class="logo">
-                <a href="#logo"><img src="./media/Healthy-logo-or-medical-logo-on-transparent-background-PNG-removebg-preview.webp" alt="logo"> </a>
-                <h1>Dr. Vijaya</h1>
+                <a href="#logo"><img src="./media/logoleft.png" alt="logo"> </a>
             </div>
             
             <div id="links" class="links">
@@ -842,7 +23,30 @@
                 <a class="a-link" href="#Services">Services</a>
                 <a class="a-link" href="#Course-Packages">Course Packages!</a>
                 <a class="a-link" href="#Contact">Contact</a>
-                <a class="button" href="#Course-Packages">Appointment</a>
+                <a href="#" class="playstore-button">
+                 
+
+                    <svg fill="currentColor" class="icon"  version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        viewBox="0 0 512 512" xml:space="preserve">
+                    <g>
+                        <g>
+                            <g>
+                                <path d="M256,0C114.618,0,0,114.618,0,256s114.618,256,256,256s256-114.618,256-256S397.382,0,256,0z M256,469.333
+                                    c-117.818,0-213.333-95.515-213.333-213.333S138.182,42.667,256,42.667S469.333,138.182,469.333,256S373.818,469.333,256,469.333
+                                    z"/>
+                                <path d="M347.582,198.248L256,289.83l-91.582-91.582c-8.331-8.331-21.839-8.331-30.17,0c-8.331,8.331-8.331,21.839,0,30.17
+                                    l106.667,106.667c8.331,8.331,21.839,8.331,30.17,0l106.667-106.667c8.331-8.331,8.331-21.839,0-30.17
+                                    C369.42,189.917,355.913,189.917,347.582,198.248z"/>
+                            </g>
+                        </g>
+                    </g>
+                    </svg>
+                    <span class="texts">
+                      <span class="text-1">DOWNLOAD</span>
+                      <span class="text-2">GSO APP</span>
+                    </span>
+                  </a>
+                  
             </div>
             <div class="menu-button" >
                 <input type="checkbox" id="checkbox" onclick="toggleMenu()">
@@ -854,6 +58,49 @@
             </div>
         </div>
     </nav>
+
+
+
+
+    <!-- POPUP Box -->
+    <div class="popup-container" id="popupContainer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center; z-index: 1000; font-family: 'Helvetica Neue', Arial, sans-serif;">
+        <div class="popup-box" style="background: linear-gradient(135deg, #1e1e1e, #2a2a2a); padding: 25px; border-radius: 15px; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); color: #eaeaea;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: #ffffff; font-weight: 600;">Download German School Online App In iPhone</h2>
+            <ol style="text-align: left; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #d0d0d0;">
+                <li>First download Classplus App</li>
+                <li>Put Organization code: <b style="color: #4caf50;">OBUWVG</b></li>
+                <li>Enter your Mobile No.</li>
+                <li>Get OTP and put</li>
+                <li>Now you're ready to use German School Online App</li>
+            </ol>
+            <p style="margin-top: 20px; font-size: 1rem; color: #bdbdbd;">Thanks for choosing us!</p>
+            <button onclick="closePopup()" style="background-color: #007BFF; color: #fff; border: none; padding: 12px 25px; border-radius: 25px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">
+                Close
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // Open popup function
+        function openPopup() {
+            const popupContainer = document.getElementById('popupContainer');
+            popupContainer.style.display = 'flex';
+        }
+    
+        // Close popup function
+        function closePopup() {
+            const popupContainer = document.getElementById('popupContainer');
+            popupContainer.style.display = 'none';
+        }
+    
+        // Close popup when clicking outside the box
+        document.getElementById('popupContainer').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('popupContainer')) {
+                closePopup();
+            }
+        });
+    </script>
+
     <script>
         function toggleMenu() {
             const links = document.querySelector('.links');
@@ -862,31 +109,79 @@
 
     </script>
 
+
+
+
 <section id="Home" class="hero-section">
     <div class="hero-right">
         <div class="h-img">
-            <img src="./media/doctor.webp" alt="">
+            <img src="./media/left.png" alt="">
         </div>
     </div>
     <div class="hero-left">
-        <h2>Best Outcome <br><b>Every Patient!</b></h2>
-        <p>Welcome to my clinic! I am Dr. Vijaya Singh, a dedicated physician with over 3 years of experience in providing compassionate care and tailored treatments to patients. My mission is to ensure the best health outcomes for every individual by combining medical expertise with a personal touch.  
-        <br><br><span>Dr. Vijaya Singh</span>
+        <h2>Master German <br><b>At Any Level!</b></h2>
+        <p>Welcome to German School Online! We provide comprehensive German language courses, from A1 to C2 levels, tailored to meet your learning needs. Our experienced and certified trainers are committed to helping you achieve fluency, whether you're a beginner or preparing for advanced exams like Goethe, Telc, and ECL. 
+        <br><br><span>German School Online</span>
         </p>
-        <span><a class="button" href="#Course-Packages">Appointment</a></span>
+        <span>
+            <a href="#" class="playstore-button">
+                <svg
+                  viewBox="0 0 512 512"
+                  class="icon"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"
+                  ></path>
+                </svg>
+                <span class="texts">
+                  <span class="text-1">GET IT ON</span>
+                  <span class="text-2">Google Play</span>
+                </span>
+              </a>
+             
+              <a href="#" onclick="openPopup()" class=" playstore-button">
+                <span class="icon">
+                  <svg
+                    fill="currentcolor"
+                    viewBox="-52.01 0 560.035 560.035"
+                    xmlns="http://www.w3.org/2000/svg"
+                    stroke="#ffffff"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        d="M380.844 297.529c.787 84.752 74.349 112.955 75.164 113.314-.622 1.988-11.754 40.191-38.756 79.652-23.343 34.117-47.568 68.107-85.731 68.811-37.499.691-49.557-22.236-92.429-22.236-42.859 0-56.256 21.533-91.753 22.928-36.837 1.395-64.889-36.891-88.424-70.883-48.093-69.53-84.846-196.475-35.496-282.165 24.516-42.554 68.328-69.501 115.882-70.192 36.173-.69 70.315 24.336 92.429 24.336 22.1 0 63.59-30.096 107.208-25.676 18.26.76 69.517 7.376 102.429 55.552-2.652 1.644-61.159 35.704-60.523 106.559M310.369 89.418C329.926 65.745 343.089 32.79 339.498 0 311.308 1.133 277.22 18.785 257 42.445c-18.121 20.952-33.991 54.487-29.709 86.628 31.421 2.431 63.52-15.967 83.078-39.655"
+                      ></path>
+                    </g>
+                  </svg>
+                </span>
+                <span class="texts">
+                  <span class="text-1">Download form</span>
+                  <span class="text-2">App store</span>
+                </span>
+              </a>
+              
+        </span>
     </div>
 </section>
 
 
 
-
+<!-- 
 <section id="About-Me" class="choose-us">
     <div class="choose-us-contener">
         <div class="choose-us-img">
-            <img src="./media/d-left.webp" alt="">
+            <img src="./media/college.png" alt="">
         </div>
         <div class="choose-us-text">
-            <h3>Why <b>Choose Us</b>?</h3>
+
             <div class="text-list">
                 <div class="list">
                     <div class="number">1</div>
@@ -919,175 +214,429 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
+
+
+<!-- 
 <section id="Services" class="best-fa">
     <div class="best-fa-con">
         <div class="l-side">
             <div class="b-l-con">
-                <h3>We Are <br><b>the Best Clinic in the City</b></h3>
-                <p>Our clinic is recognized for delivering exceptional healthcare services with an unwavering commitment to quality and patient satisfaction. Experience top-tier medical care in a trusted and welcoming environment.</p>
+                <h3>We Are <br><b>Your Gateway to German Fluency</b></h3>
+                <p>German School Online is renowned for delivering top-quality language instruction, tailored to help learners excel at any level. Join a community dedicated to your linguistic success.</p>
                 <ul>
                     <b>
-                        <li>&#11162; Comprehensive healthcare services</li>
-                        <li>&#11162; Highly experienced and skilled doctors</li>
-                        <li>&#11162; Accurate and timely lab reports</li>
-                        <li>&#11162; Accredited and ISO certified</li>
+                        <li>&#11162; Comprehensive courses from A1 to C2</li>
+                        <li>&#11162; Expert trainers with years of experience</li>
+                        <li>&#11162; Flexible scheduling options</li>
+                        <li>&#11162; Exam preparation for Goethe, Telc, and ECL</li>
                     </b>
                 </ul>
-                <span><a class="button" href="#Course-Packages">Appointment</a></span>
+                <span>
+                    <a href="#" class="playstore-button">
+                    <svg
+                      viewBox="0 0 512 512"
+                      class="icon"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"
+                      ></path>
+                    </svg>
+                    <span class="texts">
+                      <span class="text-1">GET IT ON</span>
+                      <span class="text-2">Google Play</span>
+                    </span>
+                  </a>
+                  <a onclick="openPopup()"  class="playstore-button">
+                    <span class="icon">
+                      <svg
+                        fill="currentcolor"
+                        viewBox="-52.01 0 560.035 560.035"
+                        xmlns="http://www.w3.org/2000/svg"
+                        stroke="#ffffff"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <path
+                            d="M380.844 297.529c.787 84.752 74.349 112.955 75.164 113.314-.622 1.988-11.754 40.191-38.756 79.652-23.343 34.117-47.568 68.107-85.731 68.811-37.499.691-49.557-22.236-92.429-22.236-42.859 0-56.256 21.533-91.753 22.928-36.837 1.395-64.889-36.891-88.424-70.883-48.093-69.53-84.846-196.475-35.496-282.165 24.516-42.554 68.328-69.501 115.882-70.192 36.173-.69 70.315 24.336 92.429 24.336 22.1 0 63.59-30.096 107.208-25.676 18.26.76 69.517 7.376 102.429 55.552-2.652 1.644-61.159 35.704-60.523 106.559M310.369 89.418C329.926 65.745 343.089 32.79 339.498 0 311.308 1.133 277.22 18.785 257 42.445c-18.121 20.952-33.991 54.487-29.709 86.628 31.421 2.431 63.52-15.967 83.078-39.655"
+                          ></path>
+                        </g>
+                      </svg>
+                    </span>
+                    <span class="texts">
+                      <span class="text-1">Download form</span>
+                      <span class="text-2">App store</span>
+                    </span>
+                  </a>
+                </span>
             </div>
+            
         </div>
         <div class="r-side">
             <div class="img-for-best">
-                <img src="./media/doctor2.webp" alt="">
+                <div style="position: relative; display: inline-block;">
+                    <video id="customVideo" src="./media/ezgif-6-c25e3485aa.mp4" style="width: 100%; display: block;"></video>
+                    <button id="playPauseButton" 
+                            style="
+                                position: absolute; 
+                                top: 50%; 
+                                left: 50%; 
+                                transform: translate(-50%, -50%); 
+                                background-color: rgba(0, 0, 0, 0.7); 
+                                color: white; 
+                                border: none; 
+                                border-radius: 50%; 
+                                width: 60px; 
+                                height: 60px; 
+                                font-size: 18px; 
+                                cursor: pointer;">
+                        ▶
+                    </button>
+                </div>
+                
+                <script>
+                    const video = document.getElementById('customVideo');
+                    const playPauseButton = document.getElementById('playPauseButton');
+                
+                    // Toggle Play and Pause
+                    playPauseButton.addEventListener('click', () => {
+                        if (video.paused || video.ended) {
+                            video.play();
+                            playPauseButton.textContent = "⏸"; // Change to pause icon
+                        } else {
+                            video.pause();
+                            playPauseButton.textContent = "▶"; // Change to play icon
+                        }
+                    });
+                
+                    // Reset button to Play when video ends
+                    video.addEventListener('ended', () => {
+                        playPauseButton.textContent = "▶"; // Change back to play icon
+                    });
+                </script>
+                
             </div>
         </div>
     </div>
+</section>
+ -->
+
+<!-- 
+<section class="trust-line">
+    <h2>Your Gateway to German Mastery!</h2>
+</section> -->
+<!-- 
+
+<section id="Course-Packages" class="appointment">
+    <div class="a-list" id="a-list-container"></div>
+
+    <script>
+        // Shared constants for all cards
+        const appBtnText = "Get >>";
+        const whatsBtnText = "Free Demo";
+        const whatsBtnIcon = `<svg fill="#009411" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308 308" xml:space="preserve" stroke="#009411">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                <g id="SVGRepo_iconCarrier"> 
+                                    <g id="XMLID_468_"> 
+                                        <path id="XMLID_469_" d="M227.904,176.981c-0.6-0.288-23.054-11.345-27.044-12.781c-1.629-0.585-3.374-1.156-5.23-1.156 c-3.032,0-5.579,1.511-7.563,4.479c-2.243,3.334-9.033,11.271-11.131,13.642c-0.274,0.313-0.648,0.687-0.872,0.687 c-0.201,0-3.676-1.431-4.728-1.888c-24.087-10.463-42.37-35.624-44.877-39.867c-0.358-0.61-0.373-0.887-0.376-0.887 c0.088-0.323,0.898-1.135,1.316-1.554c1.223-1.21,2.548-2.805,3.83-4.348c0.607-0.731,1.215-1.463,1.812-2.153 c1.86-2.164,2.688-3.844,3.648-5.79l0.503-1.011c2.344-4.657,0.342-8.587-0.305-9.856c-0.531-1.062-10.012-23.944-11.02-26.348 c-2.424-5.801-5.627-8.502-10.078-8.502c-0.413,0,0,0-1.732,0.073c-2.109,0.089-13.594,1.601-18.672,4.802 c-5.385,3.395-14.495,14.217-14.495,33.249c0,17.129,10.87,33.302,15.537,39.453c0.116,0.155,0.329,0.47,0.638,0.922 c17.873,26.102,40.154,45.446,62.741,54.469c21.745,8.686,32.042,9.69,37.896,9.69c0.001,0,0.001,0,0.001,0 c2.46,0,4.429-0.193,6.166-0.364l1.102-0.105c7.512-0.666,24.02-9.22,27.775-19.655c2.958-8.219,3.738-17.199,1.77-20.458 C233.168,179.508,230.845,178.393,227.904,176.981z"/> 
+                                        <path id="XMLID_470_" d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716 c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396 c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188 l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677 c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867 C276.546,215.678,222.799,268.994,156.734,268.994z"/> 
+                                    </g> 
+                                </g>
+                            </svg>`;
+
+        // Data for cards
+        const cardsData = [
+            {
+                title: "Goethe A1 Intensive German Course",
+                nots: ["LIVE CLASS", "VIDEOS", "FILES"],
+                imageSrc: "./media/course.jpeg",
+                appBtnLink: "#",
+                whatsBtnLink: "#"
+            },
+            {
+                title: "Goethe A1 Intensive German Course",
+                nots: ["LIVE CLASS", "VIDEOS", "FILES"],
+                imageSrc: "./media/course.jpeg",
+                appBtnLink: "#",
+                whatsBtnLink: "#"
+            }
+        ];
+
+        // Generate cards dynamically
+        const container = document.getElementById("a-list-container");
+
+        cardsData.forEach(card => {
+            const cardHTML = `
+                <div class="card">
+                    <div class="head">
+                        <h3>${card.title}</h3>
+                        <div class="nots">
+                            ${card.nots.map(note => `<span>${note}</span>`).join("")}
+                        </div>
+                    </div>
+                    <img src="${card.imageSrc}" alt="">
+                    <div class="bottem-btn">
+                        <a class="app-btn" href="${card.appBtnLink}">${appBtnText}</a>
+                        <a class="whats-btn" href="${card.whatsBtnLink}">
+                            ${whatsBtnIcon}
+                            ${whatsBtnText}
+                        </a>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += cardHTML;
+        });
+    </script>
+
+
+    
+
+</section> -->
+
+<style>
+    .feedback{
+        width: 100vw;
+        min-height: 100vh;
+        background: linear-gradient(180deg, #ffffff, #0f0f0f);
+        display: grid;
+        place-items: center;
+    }
+
+    
+
+    .feed-card{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        border-radius: 2rem;
+        color: #fff;
+    }
+
+    .feed-card .card-img{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        border-radius: 2rem;
+    }
+    .feed-card .card-img img{
+        width: 100%;
+        height: 100%;
+    }
+
+   
+.button {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background: linear-gradient(30deg, rgb(255, 130, 0) 20%, rgb(255, 38, 0) 80%);
+  transition: all 0.3s ease-in-out 0s;
+  box-shadow: rgba(193, 244, 246, 0.698) 0px 0px 0px 0px;
+  animation: 1.2s cubic-bezier(0.8, 0, 0, 1) 0s infinite normal none running pulse;
+  align-items: center;
+  border: 0;
+  position: absolute;
+}
+
+.button:is(:hover, :focus) {
+  transform: scale(1.2);
+}
+
+@keyframes pulse {
+  100% {
+    box-shadow: 0 0 0 45px rgba(193,244,246,0);
+  }
+}
+
+.swiper {
+    width: 350px;
+    height: 600px;
+    padding: 1rem;
+    background-color: #0f0f0f;
+    border-radius: 2rem;
+    overflow: hidden;
+      
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 2rem;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .swiper-pagination-bullet {
+        background-color: #fff;
+    }
+
+
+</style>
+
+
+<section class="feedback"> 
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="feed-card">
+                    <div class="feed-card-text">
+        
+                    </div>
+                    <div class="card-img">
+                        <img src="./media/a.png" alt="">
+                    
+                        <button class="button">
+                            <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="26px"><path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" fill="currentColor"></path></svg>
+                        </button>
+                        
+                    </div>
+                    
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="feed-card">
+                    <div class="feed-card-text">
+        
+                    </div>
+                    <div class="card-img">
+                        <img src="./media/b.png" alt="">
+                    
+                        <button class="button">
+                            <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="26px"><path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" fill="currentColor"></path></svg>
+                        </button>
+                        
+                    </div>
+                    
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="feed-card">
+                    <div class="feed-card-text">
+        
+                    </div>
+                    <div class="card-img">
+                        <img src="./media/c.png" alt="">
+                    
+                        <button class="button">
+                            <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="26px"><path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" fill="currentColor"></path></svg>
+                        </button>
+                        
+                    </div>
+                    
+                </div>
+              </div>
+             
+            </div>
+            <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> -->
+            <div class="swiper-pagination"></div>
+          </div>
+        
+          <!-- Swiper JS -->
+          <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        
+          <!-- Initialize Swiper -->
+          <script>
+            var swiper = new Swiper(".mySwiper", {
+              slidesPerView: 1,
+              spaceBetween: 30,
+              loop: true,
+              direction: "vertical",
+              autoplay: {
+                delay: 4500,
+                disableOnInteraction: false,
+            },
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
+            });
+          </script>
+        
+
 </section>
 
 
 
 
-    <section id="Course-Packages" class="appointment">
-        <div class="a-list">
-            <div class="card">
-                <h3>Appointment <br> <span> Price: ₹300 </span></h3>
-                <ul>
-                    <li> <span>&#10004; </span> Health Assessment & Consultation</li>
-                    <li> <span>&#10004; </span> Routine Health Check-up</li>
-                    <li> <span>&#10004; </span> Medication & Treatment Guidance</li>
-                    <li> <span>&#10004; </span> Diagnostic Report Analysis</li>
-                    <li> <span>&#10004; </span> queue appointment</li>
-                    <li> <span class="cls">&#10008; </span> Direct Appointment</li>
-                    <li> <span class="cls">&#10008; </span> Waiting Time</li>
-                </ul>
-                <a href="https://wa.me/918302160041?text=मुझे%20हेल्थ%20चेक-अप%20और%20कंसल्टेशन%20के%20लिए%20अपॉइंटमेंट%20चाहिए।%20कृपया%20समय%20बताएं।%20धन्यवाद!" target="_blank">Book Now</a>              
-            </div>
-            <div class="card em-card">
-                <h3 id="em-head">Emergency <br> <span> Price: ₹500 </span></h3>
-                <ul>
-                    <li> <span>&#10004; </span> Health Assessment & Consultation</li>
-                    <li> <span>&#10004; </span> Routine Health Check-up</li>
-                    <li> <span>&#10004; </span> Medication & Treatment Guidance</li>
-                    <li> <span>&#10004; </span> Diagnostic Report Analysis</li>
-                    <li> <span>&#10004; </span> queue appointment</li>
-                    <li> <span>&#10004; </span> Direct Appointment</li>
-                    <li> <span>&#10004; </span>No Waiting Time</li>
-                </ul>
-                <a href="tel:+918302160041" class="em-a">Direct Call</a>              
-            </div>
-            <div class="card">
-                <h3>D-Appointment <br> <span> Price: ₹400 </span></h3>
-                <ul>
-                    <li> <span>&#10004; </span> Health Assessment & Consultation</li>
-                    <li> <span>&#10004; </span> Routine Health Check-up</li>
-                    <li> <span>&#10004; </span> Medication & Treatment Guidance</li>
-                    <li> <span>&#10004; </span> Diagnostic Report Analysis</li>
-                    <li> <span>&#10004; </span> queue appointment</li>
-                    <li> <span>&#10004; </span> Direct Appointment</li>
-                    <li> <span class="cls">&#10008; </span>Reduced Waiting Duration</li>
 
-                </ul>
-                <a href="https://wa.me/918302160041?text=मुझे%20हेल्थ%20चेक-अप%20और%20कंसल्टेशन%20के%20लिए%20अपॉइंटमेंट%20चाहिए।%20कृपया%20समय%20बताएं।%20धन्यवाद!">Book Now</a>              
-            </div>            
-        </div>
-    </section>
 
-    <section id="Contact" class="schedule-contact">
-        <div class="container">
-            <!-- Schedule Section -->
-            <div class="schedule-list">
-                <h3>Working Hours</h3>
-                <ul>
-                    <li>
-                        <span class="day">Monday:</span>
-                        <span class="time">9:00 AM - 7:00 PM</span>
-                    </li>
-                    <li>
-                        <span class="day">Tuesday:</span>
-                        <span class="time">9:00 AM - 7:00 PM</span>
-                    </li>
-                    <li>
-                        <span class="day">Wednesday:</span>
-                        <span class="time">9:00 AM - 7:00 PM</span>
-                    </li>
-                    <li>
-                        <span class="day">Thursday:</span>
-                        <span class="time">9:00 AM - 7:00 PM</span>
-                    </li>
-                    <li>
-                        <span class="day">Friday:</span>
-                        <span class="time">9:00 AM - 7:00 PM</span>
-                    </li>
-                    <li>
-                        <span class="day">Saturday:</span>
-                        <span class="time">10:00 AM - 5:00 PM</span>
-                    </li>
-                    <li>
-                        <span class="day">Sunday:</span>
-                        <span class="time">Closed</span>
-                    </li>
-                </ul>
-            </div>
-    
-            <!-- Contact Section -->
-            <div class="contact">
-                <h3>Contact Information</h3>
-                <p><i class="fas fa-phone"></i> +91 9876543210</p>
-                <p><i class="fas fa-envelope"></i> contact@healthyclinic.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Sikar, Rajasthan, India</p>
-    
-                <!-- Social Media Links -->
-                <div class="social-links">
-                    <h3>Follow Us</h3>
-                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    
+
+
+
+
+   
     
 
     
 
+<!-- 
 
-
+<section class="faq">
     <div class="faq-container">
         <div class="faq-header">
             <h2>Frequently Asked Questions</h2>
         </div>
     
         <div class="faq-item">
-            <h3>Can I book an appointment online?</h3>
-            <p>Yes, you can easily book an appointment through our website or by calling us.</p>
+            <h3>How do I download the German School Online App?</h3>
+            <p>First, download the Classplus App and enter the organization code <b>OBUWVG</b> to access the German School Online App.</p>
         </div>
     
         <div class="faq-item">
-            <h3>What should I bring for my first appointment?</h3>
-            <p>Please bring your previous medical reports, a list of current medications, and a valid ID proof.</p>
+            <h3>What is the organization code?</h3>
+            <p>The organization code for German School Online is <b>OBUWVG</b>. Use this code after downloading the Classplus App.</p>
         </div>
     
         <div class="faq-item">
-            <h3>What happens during an appointment?</h3>
-            <p>The doctor will assess your health concerns, review your medical history, and plan any necessary tests or treatments.</p>
+            <h3>Can I access live classes on the app?</h3>
+            <p>Yes, the app provides access to live classes, video lessons, and downloadable resources to enhance your learning experience.</p>
         </div>
     
         <div class="faq-item">
-            <h3>What are the clinic hours?</h3>
-            <p>Our clinic is open Monday to Saturday, from 9 AM to 7 PM.</p>
+            <h3>Do I need to pay separately for the app?</h3>
+            <p>No, once you enroll in our courses, access to the app is included in the course fee.</p>
         </div>
     
         <div class="faq-item">
-            <h3>Do you accept insurance cards?</h3>
-            <p>Yes, we accept insurance cards. Please share your insurance details in advance.</p>
+            <h3>What if I face issues accessing the app?</h3>
+            <p>If you experience any issues, please contact our support team via email or phone. We’re here to help!</p>
         </div>
     </div>
-    
+</section> 
+
+     -->
 
     
 
@@ -1099,47 +648,48 @@
 
 
 
+<!-- 
 
-
-    <footer>
-        <div class="footer-container">
-            <!-- Logo and Tagline -->
-            <div class="footer-logo">
-                <img src="./media/Healthy-logo-or-medical-logo-on-transparent-background-PNG-removebg-preview.webp" alt="Footer Logo">
-                <p>Your Health, Our Priority</p>
-            </div>
-            <!-- Quick Links -->
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Me</a></li>
-                    <li><a href="#">My Services</a></li>
-                    <li><a href="#">Course Packages</a></li>
-                    <li><a href="#">Appointment</a></li>
-                </ul>
-            </div>
-            <!-- Contact Info -->
-            <div class="footer-contact">
-                <h4>Contact Us</h4>
-                <p><i class="fas fa-phone"></i> +91 9876543210</p>
-                <p><i class="fas fa-envelope"></i> support@healthyclinic.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Sikar, Rajasthan, India</p>
-            </div>
-            <!-- Social Media -->
-            <div class="footer-social">
-                <h4>Follow Us</h4>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
+<footer>
+    <div class="footer-container">
+        
+        <div class="footer-logo">
+            <img src="./media/logo.png" alt="German School Online Logo">
+            <p>Fluency in German, Your Success Our Priority</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Healthy Clinic. All Rights Reserved. | Design by Infinity Corporation</p>
+        
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Live Classes</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </div>
-    </footer>
-    
+        
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p><i class="fas fa-phone"></i> +91 9876543210</p>
+            <p><i class="fas fa-envelope"></i> support@germanschoolonline.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Berlin, Germany</p>
+        </div>
+       
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 German School Online. All Rights Reserved. | Design by Infinity Corporation</p>
+    </div>
+</footer>
+
+     -->
 
     
     <script>
