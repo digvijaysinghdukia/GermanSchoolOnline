@@ -15,7 +15,7 @@ body{
     display: grid;
     grid-auto-flow: row;
     scroll-behavior: smooth;
-    
+    background-color: #000;
 }
 nav {
     position: sticky;
@@ -333,7 +333,7 @@ transform: rotate(180deg);
 .hero-right .h-img img{
     width: 100%;
 }
-@media (max-width: 700px) {
+@media (max-width: 900px) {
     .hero-section{
         grid-template-columns: 100%;
         overflow-y: hidden;
@@ -345,7 +345,7 @@ transform: rotate(180deg);
         font-weight: 300;
     }
     .h-img img{
-        width: 80vw;
+        width: 150%;
         height: auto;
     }
     .hero-left p{
@@ -418,7 +418,7 @@ transform: rotate(180deg);
     width: 100%;
     height: auto;
 }
-@media (max-width: 700px) {
+@media (max-width: 900px) {
     .best-fa-con{
         grid-template-columns: 100%;
         row-gap: 2rem;
@@ -437,7 +437,7 @@ transform: rotate(180deg);
         height: 16rem;
     }
     .img-for-best img{
-        width: 80vw;
+        width: 100%;
     }
 }
 
@@ -509,7 +509,7 @@ transform: rotate(180deg);
     display: block;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
     .choose-us{
     width: 100vw;
     height: 100vh;
@@ -589,7 +589,7 @@ transform: rotate(180deg);
     place-items: center;
 }
 .a-list{
-    width: 1000px;
+    width: 80%;
     display: grid;
     place-items: center;
     grid-template-columns: repeat(3, 1fr);
@@ -664,7 +664,17 @@ transform: rotate(180deg);
     width: 1.2rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
+    .a-list{
+        
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+}
+
+@media (max-width: 600px) {
     .a-list{
         width: 100%;
         padding-top: 2rem;

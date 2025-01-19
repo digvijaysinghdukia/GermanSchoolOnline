@@ -346,6 +346,20 @@
                 imageSrc: "./media/course.jpeg",
                 appBtnLink: "#",
                 whatsBtnLink: "#"
+            },
+            {
+                title: "Goethe A1 Intensive German Course",
+                nots: ["LIVE CLASS", "VIDEOS", "FILES"],
+                imageSrc: "./media/course.jpeg",
+                appBtnLink: "#",
+                whatsBtnLink: "#"
+            },
+            {
+                title: "Goethe A1 Intensive German Course",
+                nots: ["LIVE CLASS", "VIDEOS", "FILES"],
+                imageSrc: "./media/course.jpeg",
+                appBtnLink: "#",
+                whatsBtnLink: "#"
             }
         ];
 
@@ -393,7 +407,7 @@
         display: grid;
         place-items: center;
         grid-template-columns: repeat(4, 1fr);
-        
+        row-gap: 1rem;
         padding: 1rem;
     }
     
@@ -513,16 +527,30 @@
     box-shadow: 0 0 0 45px rgba(193,244,246,0);
   }
 }
+@media (max-width: 1128px) {
+    .feedback-contener{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+
+@media (max-width: 900px) {
+    .feedback-contener{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
 
 @media (max-width: 700px) {
     .feedback-contener{
         height: 100%;
-        width: 100%;
+        width: auto;
         grid-template-columns: 100%;
         row-gap: 1rem;
         padding: 2rem;
         border-radius: 0px;
+        grid-template-columns: repeat(1, 1fr);
     }
 }   .feedback{
         width: 100vw;
