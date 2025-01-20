@@ -130,7 +130,7 @@ nav .links .a-link:hover {
     }
 
     nav .button-nav:hover {
-        background: linear-gradient(90deg, #007bff, #28a745);
+        background: linear-gradient(90deg, #000000 33%, #ba0c24 66%, #fcbb35 100%);
         border-radius: 2rem;
     }
 /* Menu Button Styles */
@@ -377,7 +377,7 @@ transform: rotate(180deg);
     place-items: center;
     padding: 3rem;
     padding-bottom: 5rem;
-
+    
 }
 .best-fa-con{
     width: 90%;
@@ -457,7 +457,7 @@ transform: rotate(180deg);
     place-items: center;
     padding: 2REM;
     
-    background-color: #fefeff;
+    background: linear-gradient(0deg, #ffffff, #e8f1ff, #ffffff);
     
 }
 .choose-us-contener{
