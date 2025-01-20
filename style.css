@@ -326,7 +326,7 @@ transform: rotate(180deg);
     background-position-y: center;
 }
 .hero-right .h-img{
-    width: 110%;
+    width: 100%;
     display: grid;
     place-items: center;
     padding: 2rem;
