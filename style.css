@@ -330,6 +330,10 @@ transform: rotate(180deg);
     display: grid;
     place-items: center;
     padding: 2rem;
+    background-image: url(./media/HERO-BACK-removebg-preview.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .hero-right .h-img img{
     width: 100%;
