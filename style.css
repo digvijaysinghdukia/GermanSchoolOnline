@@ -442,7 +442,7 @@ transform: rotate(180deg);
         height: 16rem;
     }
     .img-for-best img{
-        width: 150%;
+        width: 110%;
     }
 }
 
@@ -497,7 +497,7 @@ transform: rotate(180deg);
 .list{
     width: 100%;
     display: grid;
-    grid-template-columns: 10% auto;
+    grid-template-columns: 20% auto;
     place-items: center;
 }
 .number{
