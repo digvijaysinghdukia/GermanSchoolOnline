@@ -344,6 +344,7 @@ transform: rotate(180deg);
         overflow-y: hidden;
         padding: 1rem;
         row-gap: 1rem;
+        place-items: center;
     }
     .hero-left h2{
         font-size: xx-large;
@@ -483,8 +484,9 @@ transform: rotate(180deg);
     place-items: center;
 }
 .choose-us-text h3{
-    font-size: 2rem;
+    font-size: 3rem;
     color: rgb(0, 0, 0);
+    font-weight: 300;
 }
 .text-list{
     width: 80%;
