@@ -816,7 +816,9 @@ footer {
     place-items: center;
 }
 .footer-logo img {
-    max-width: 100px;
+    max-width: 200px;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 
 .footer-logo p {
