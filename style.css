@@ -571,7 +571,9 @@ transform: rotate(180deg);
         grid-template-columns: 20% auto;
     }
     .choose-us-text{
-        grid-template-rows: auto;
+        grid-template-rows: max-content max-content;
+        row-gap: 2rem;
+        padding-top: 3rem;
         height: 100%;
     }
     .number-text h4{
