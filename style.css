@@ -336,7 +336,7 @@ transform: rotate(180deg);
     background-position: center;
 }
 .hero-right .h-img img{
-    width: 120%;
+    width: 140%;
 }
 @media (max-width: 900px) {
     .hero-section{
