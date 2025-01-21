@@ -353,6 +353,10 @@ transform: rotate(180deg);
         font-size: xx-large;
         font-weight: 300;
     }
+    .hero-section .h-img{
+        place-items: center;
+        justify-items: center;
+    }
     .h-img img{
         width: 120%;
         height: auto;
