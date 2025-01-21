@@ -291,6 +291,7 @@ transform: rotate(180deg);
     grid-template-columns: 40% auto;
     place-items: center;
     justify-items: end;
+    
 }
 .hero-section .hero-left{
     width: 80%;
@@ -329,6 +330,8 @@ transform: rotate(180deg);
     width: 100%;
     display: grid;
     place-items: center;
+    justify-content: end;
+    justify-items: start;
     padding: 2rem;
     /* background-image: url(./media/HERO-BACK-removebg-preview.png); */
     background-size: 100%;
