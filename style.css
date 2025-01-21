@@ -791,7 +791,7 @@ transform: rotate(180deg);
 
 
 footer {
-    background-color: #000000;
+    background: linear-gradient(90deg, #000000, #ba0c24, #fcbb35);
     color: white;
     padding: 40px 20px;
 }
