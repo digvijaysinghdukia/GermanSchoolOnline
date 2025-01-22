@@ -608,7 +608,7 @@ transform: rotate(180deg);
     width: 100vw;
     display: grid;
     place-items: center;
-    background-image: linear-gradient(to right, rgb(32, 29, 54) , rgb(82, 1, 78));
+    background: linear-gradient(0deg, #000000, #ba0c24, #000000);
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
