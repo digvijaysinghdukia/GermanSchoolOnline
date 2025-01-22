@@ -299,6 +299,7 @@ transform: rotate(180deg);
     grid-auto-flow: row;
     row-gap: 3rem;
     
+
 }
 
 .hero-left h2{
@@ -341,6 +342,7 @@ transform: rotate(180deg);
 .hero-right .h-img img{
     width: 140%;
 }
+
 @media (max-width: 900px) {
     .hero-section{
         grid-template-columns: 100%;
@@ -348,6 +350,19 @@ transform: rotate(180deg);
         padding-bottom: 1rem;
         row-gap: 1rem;
         place-items: center;
+    }
+    
+    .hero-left{
+        width: 100%;
+        position: relative;
+        top: -7rem;
+        background: linear-gradient(0deg, #fff, #f2f7ff);
+        padding-top: 2rem;
+        text-align: center;
+        box-shadow: 0px 0px 10px rgb(158, 158, 158);
+        border-radius: 2rem;
+        padding: 1rem;
+        overflow: hidden;
     }
     .hero-left h2{
         font-size: xx-large;
@@ -366,7 +381,7 @@ transform: rotate(180deg);
         font-size: medium;
     }
     .hero-section .hero-left{
-        width: 90%;
+        width: 100%;
     }
     .store-bts{
         width: 100%;
