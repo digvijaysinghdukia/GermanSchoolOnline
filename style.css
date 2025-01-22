@@ -894,6 +894,7 @@ footer {
     height: auto;
     display: grid;
     place-items: center;
+    grid-template-rows: max-content max-content;
 }
 .footer-logo img {
     max-width: 15rem;
