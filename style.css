@@ -1129,8 +1129,11 @@ footer {
     font-size: 14px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding-top: 10px;
+    
 }
-
+.footer-bottom a{
+    color: white;
+}
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
