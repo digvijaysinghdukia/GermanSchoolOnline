@@ -806,7 +806,7 @@ transform: rotate(180deg);
     height: fit-content;
     display: grid;
     place-items: center;
-    background-color: #2c2c2c;
+    background-color: #ffffff;
 }
 
 
@@ -825,30 +825,28 @@ transform: rotate(180deg);
 }
 
 .faq-header h2 {
-    color: #ecebeb;
+    color: #272727;
     font-size: 28px;
 }
 
 .faq-item {
-    border-bottom: 1px solid #727171;
+    border-bottom: 1px solid #ffffff;
     padding: 15px 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.faq-item:hover {
-    background-color: #2c2c2c;
-}
+
 
 .faq-item h3 {
-    color: #007BFF;
+    color: #3f3f3f;
     font-size: 18px;
     margin: 0;
 }
 
 .faq-item p {
     display: none;
-    color: #a5a4a4;
+    color: #757575;
     margin-top: 10px;
     line-height: 1.6;
 }
@@ -858,7 +856,7 @@ transform: rotate(180deg);
 }
 
 .faq-item.open h3 {
-    color: #0056b3;
+    color: #252525;
 }
 
 @media (max-width: 700px) {
@@ -1045,8 +1043,8 @@ color: white;
 }
 
 footer {
-    background-color: #0056b3;
-    color: white;
+    background-color: #e0e0e0;
+    color: rgb(75, 75, 75);
     padding: 40px 20px;
 }
 
@@ -1093,7 +1091,7 @@ footer {
 
 .footer-links a {
     text-decoration: none;
-    color: white;
+    color: rgb(75, 75, 75);
     transition: color 0.3s;
 }
 
@@ -1113,7 +1111,7 @@ footer {
 
 .footer-social a {
     text-decoration: none;
-    color: white;
+    color: rgb(75, 75, 75);
     margin-right: 15px;
     font-size: 20px;
     transition: color 0.3s;
@@ -1132,7 +1130,7 @@ footer {
     
 }
 .footer-bottom a{
-    color: white;
+    color: rgb(75, 75, 75);
 }
 @media (max-width: 768px) {
     .footer-container {
