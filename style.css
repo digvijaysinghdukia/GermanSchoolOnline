@@ -1,7 +1,5 @@
 
-
 @import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
-
 *{
     padding: 0px;
     margin: 0px;
@@ -65,74 +63,79 @@ nav .links .a-link {
     text-decoration: none;
     font-weight: 500;
     color: rgb(0, 0, 0);
+    
     transition-duration: 0.5s;
+    background: linear-gradient(90deg, #000000, #ba0c24, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 nav .links .a-link:hover {
-    background: linear-gradient(90deg, #208538, #007bff);
+    background: linear-gradient(90deg, #000000, #000000, #000000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .playstore-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #000;
-    border-radius: 9999px;
-    background-color: rgba(0, 0, 0, 1);
-    padding: 0.625rem 1.5rem;
-    text-align: center;
-    color: rgba(255, 255, 255, 1);
-    outline: 0;
-    transition: all 0.2s ease;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+border: 2px solid #000;
+border-radius: 9999px;
+background-color: rgba(0, 0, 0, 1);
+padding: 0.625rem 1.5rem;
+text-align: center;
+color: rgba(255, 255, 255, 1);
+outline: 0;
+transition: all 0.2s ease;
+text-decoration: none;
+}
+
+.playstore-button:hover {
+background-color: transparent;
+color: rgba(0, 0, 0, 1);
+}
+
+.icon {
+height: 1.5rem;
+width: 1.5rem;
+}
+
+.texts {
+margin-left: 1rem;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+line-height: 1;
+}
+
+.text-1 {
+margin-bottom: 0.25rem;
+font-size: 0.75rem;
+line-height: 1rem;
+}
+
+.text-2 {
+font-weight: 600;
+overflow: hidden;
+}
+    
+nav .button-nav {
+    background: linear-gradient(90deg, #000000, #ba0c24, #000000);
+    padding: 1rem 1.5rem;
+    color: white;
     text-decoration: none;
-    }
-
-    .playstore-button:hover {
-    background-color: transparent;
-    color: rgba(0, 0, 0, 1);
-    }
-
-    .icon {
-    height: 1.5rem;
-    width: 1.5rem;
-    }
-
-    .texts {
-    margin-left: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    line-height: 1;
-    }
-
-    .text-1 {
-    margin-bottom: 0.25rem;
-    font-size: 0.75rem;
-    line-height: 1rem;
-    }
-
-    .text-2 {
+    border-radius: 2rem;
+    border-top-left-radius: 0px;
     font-weight: 600;
-    overflow: hidden;
-    }
-     
-    nav .button-nav {
-        background: linear-gradient(90deg, #000000, #ba0c24, #fcbb35);
-        padding: 1rem 1.5rem;
-        color: white;
-        text-decoration: none;
-        border-radius: 2rem;
-        border-top-left-radius: 0px;
-        font-weight: 600;
-        transition-duration: 0.5s;
-    }
+    transition-duration: 0.5s;
+}
 
-    nav .button-nav:hover {
-        background: linear-gradient(90deg, #000000 33%, #ba0c24 66%, #fcbb35 100%);
-        border-radius: 2rem;
-    }
+nav .button-nav:hover {
+    background: linear-gradient(90deg, #000000, #000000, #000000);
+
+}
+
 /* Menu Button Styles */
 .menu-button {
     display: none;
@@ -143,7 +146,6 @@ nav .links .a-link:hover {
     top: 20px;
     right: 20px;
 }
-
 
 #checkbox {
 display: none;
@@ -281,7 +283,7 @@ transform: rotate(180deg);
     }
 }
 
-/* From Uiverse.io by Gaurang7717 */ 
+
 .Btn {
     display: flex;
     align-items: center;
@@ -676,7 +678,7 @@ transform: rotate(180deg);
     width: 100vw;
     display: grid;
     place-items: center;
-    background: linear-gradient(0deg, #000000, #ba0c24, #000000);
+    background: linear-gradient(90deg, #000000, #ba0c24, #000000);
     padding: 2rem;
 }
 .trust-line h2{
@@ -868,7 +870,179 @@ transform: rotate(180deg);
     }
 }
 
+.feedback{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.feedback-contener{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 1rem;
+    padding: 1rem;
+}
 
+.card-box{
+    width: 290px;
+    height: 400px;
+    padding: 0.1rem;
+    border: 2px solid #007BFF;
+    border-radius: 2rem;
+}
+.feed-card{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    place-items: center;
+    border-radius: 2rem;
+    color: #fff;
+    background-color: #fff;        
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.feed-card .card-img{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 2rem;
+}
+.feed-card .card-img img{
+    width: 100%;
+    height: 100%;
+}
+.feed-card-text{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #ffffff00 0%,#ffffff, #ffffff 100%);
+    display: grid;
+    padding: 0.4rem;
+    place-items: center;
+    color: black;
+}
+.feed-card-text h3{
+    width: 100%;
+    font-size: medium;
+}
+.feed-card-text p{
+    font-size: smaller;
+}
+.feed-card-text{
+    width: 1;
+}
+/* From Uiverse.io by vikramsinghnegi */ 
+button.youtube-button {
+font-family: inherit;
+font-size: small;
+background: linear-gradient(to bottom, #ff0000 0%, #ff5050 100%);
+color: white;
+padding: 0.5em 0.8em;
+display: flex;
+align-items: center;
+justify-content: center;
+border: none;
+border-radius: 25px;
+box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+transition: all 0.3s;
+}
+
+button.youtube-button:hover {
+transform: translateY(-3px);
+box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+button.youtube-button:active {
+transform: scale(0.95);
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button.youtube-button span {
+display: block;
+margin-left: 0.4em;
+transition: all 0.3s;
+}
+
+button.youtube-button svg {
+width: 18px;
+height: 18px;
+fill: white;
+transition: all 0.3s;
+}
+
+button.youtube-button .svg-wrapper {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+background-color: rgba(255, 255, 255, 0.2);
+margin-right: 0.5em;
+transition: all 0.3s;
+}
+
+button.youtube-button:hover .svg-wrapper {
+background-color: rgba(255, 255, 255, 0.5);
+}
+
+button.youtube-button:hover svg {
+transform: rotate(45deg);
+}
+
+
+@keyframes pulse {
+100% {
+box-shadow: 0 0 0 45px rgba(193,244,246,0);
+}
+}
+@media (max-width: 1128px) {
+.feedback-contener{
+    grid-template-columns: repeat(3, 1fr);
+}
+}
+
+
+
+@media (max-width: 900px) {
+.feedback-contener{
+    grid-template-columns: repeat(2, 1fr);
+}
+}
+
+
+@media (max-width: 700px) {
+.feedback-contener{
+    height: 100%;
+    width: auto;
+    grid-template-columns: 100%;
+    row-gap: 1rem;
+    padding: 2rem;
+    border-radius: 0px;
+    grid-template-columns: repeat(1, 1fr);
+}
+}   .feedback{
+    width: 100vw;
+    height: fit-content;
+}
+
+
+.feedback-name{
+display: grid;
+place-items: center;
+padding: 2rem;
+font-size: x-large;
+background: linear-gradient(90deg, #000000, #ba0c24, #000000);
+text-align: center;
+color: white;
+}
 
 footer {
     background-color: #0056b3;
@@ -970,107 +1144,6 @@ footer {
 
     .footer-logo img {
         
-    }
-}
-
-/* Schedule and Contact Section */
-.schedule-contact {
-background-color: #92bffa;
-padding: 40px 20px;
-}
-
-.container {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 20px;
-max-width: 1000px;
-margin: 0 auto;
-}
-
-.schedule-list,
-.contact {
-background-color: white;
-border-radius: 8px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-padding: 20px;
-}
-
-.schedule-list h3,
-.contact h3 {
-font-size: 20px;
-color: #007BFF;
-margin-bottom: 15px;
-}
-
-/* Schedule List Styling */
-.schedule-list ul {
-list-style: none;
-padding: 0;
-margin: 0;
-}
-
-.schedule-list ul li {
-display: grid;
-grid-template-columns: 1fr 1fr;
-padding: 10px 0;
-border-bottom: 1px solid #e4e4e4;
-}
-
-.schedule-list ul li:last-child {
-border-bottom: none;
-}
-
-.schedule-list .day {
-font-weight: bold;
-color: #333;
-}
-
-.schedule-list .time {
-text-align: right;
-color: #007BFF;
-font-weight: 500;
-}
-
-/* Contact Section Styling */
-.contact p {
-font-size: 16px;
-color: #333;
-margin: 10px 0;
-display: flex;
-align-items: center;
-}
-
-.contact i {
-margin-right: 10px;
-color: #007BFF;
-}
-
-/* Social Media Section */
-.social-links {
-margin-top: 20px;
-}
-
-.social-links h3 {
-font-size: 18px;
-color: #007BFF;
-margin-bottom: 10px;
-}
-
-.social-links a {
-margin-right: 15px;
-font-size: 20px;
-color: #007BFF;
-transition: color 0.3s;
-}
-
-.social-links a:hover {
-color: #0056b3;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-    grid-template-columns: 1fr;
     }
 }
 
