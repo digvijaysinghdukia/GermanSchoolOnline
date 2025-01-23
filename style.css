@@ -65,7 +65,7 @@ nav .links .a-link {
     color: rgb(0, 0, 0);
     
     transition-duration: 0.5s;
-    background: linear-gradient(90deg, #000000, #007bff, #000000);
+    background: linear-gradient(90deg, #000000, #ba0c24, #000000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -89,6 +89,7 @@ color: rgba(255, 255, 255, 1);
 outline: 0;
 transition: all 0.2s ease;
 text-decoration: none;
+margin: 0.5rem;
 }
 
 .playstore-button:hover {
@@ -121,7 +122,7 @@ overflow: hidden;
 }
     
 nav .button-nav {
-    background: linear-gradient(90deg, #000000, #007bff, #000000);
+    background: linear-gradient(90deg, #000000, #ba0c24, #000000);
     padding: 1rem 1.5rem;
     color: white;
     text-decoration: none;
@@ -412,9 +413,7 @@ transform: rotate(180deg);
 .hero-right .h-img img{
     width: 140%;
 }
-b{
-    color: #007bff;
-}
+
 @media (max-width: 900px) {
     .hero-section{
         grid-template-columns: 100%;
@@ -680,7 +679,7 @@ b{
     width: 100vw;
     display: grid;
     place-items: center;
-    background: linear-gradient(90deg, #000000, #007bff, #000000);
+    background: linear-gradient(90deg, #000000, #ba0c24, #000000);
     padding: 2rem;
 }
 .trust-line h2{
@@ -808,7 +807,7 @@ b{
     height: fit-content;
     display: grid;
     place-items: center;
-    background-color: #ffffff;
+    background-color: #2c2c2c;
 }
 
 
@@ -827,28 +826,30 @@ b{
 }
 
 .faq-header h2 {
-    color: #272727;
+    color: #ecebeb;
     font-size: 28px;
 }
 
 .faq-item {
-    border-bottom: 1px solid #ffffff;
+    border-bottom: 1px solid #727171;
     padding: 15px 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-
+.faq-item:hover {
+    background-color: #2c2c2c;
+}
 
 .faq-item h3 {
-    color: #3f3f3f;
+    color: #007BFF;
     font-size: 18px;
     margin: 0;
 }
 
 .faq-item p {
     display: none;
-    color: #757575;
+    color: #a5a4a4;
     margin-top: 10px;
     line-height: 1.6;
 }
@@ -858,7 +859,7 @@ b{
 }
 
 .faq-item.open h3 {
-    color: #252525;
+    color: #0056b3;
 }
 
 @media (max-width: 700px) {
@@ -942,7 +943,7 @@ b{
 button.youtube-button {
 font-family: inherit;
 font-size: small;
-background: linear-gradient(to bottom, #007bff 0%, #69b2ff 100%);
+background: linear-gradient(to bottom, #ff0000 0%, #ff5050 100%);
 color: white;
 padding: 0.5em 0.8em;
 display: flex;
@@ -1039,14 +1040,14 @@ display: grid;
 place-items: center;
 padding: 2rem;
 font-size: x-large;
-background: linear-gradient(90deg, #000000, #007bff, #000000);
+background: linear-gradient(90deg, #000000, #ba0c24, #000000);
 text-align: center;
 color: white;
 }
 
 footer {
-    background-color: #e0e0e0;
-    color: rgb(75, 75, 75);
+    background-color: #007099;
+    color: white;
     padding: 40px 20px;
 }
 
@@ -1093,7 +1094,7 @@ footer {
 
 .footer-links a {
     text-decoration: none;
-    color: rgb(75, 75, 75);
+    color: white;
     transition: color 0.3s;
 }
 
@@ -1113,7 +1114,7 @@ footer {
 
 .footer-social a {
     text-decoration: none;
-    color: rgb(75, 75, 75);
+    color: white;
     margin-right: 15px;
     font-size: 20px;
     transition: color 0.3s;
@@ -1132,7 +1133,7 @@ footer {
     
 }
 .footer-bottom a{
-    color: rgb(75, 75, 75);
+    color: white;
 }
 @media (max-width: 768px) {
     .footer-container {
