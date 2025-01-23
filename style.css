@@ -65,7 +65,7 @@ nav .links .a-link {
     color: rgb(0, 0, 0);
     
     transition-duration: 0.5s;
-    background: linear-gradient(90deg, #000000, #ba0c24, #000000);
+    background: linear-gradient(90deg, #000000, #007bff, #000000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -121,7 +121,7 @@ overflow: hidden;
 }
     
 nav .button-nav {
-    background: linear-gradient(90deg, #000000, #ba0c24, #000000);
+    background: linear-gradient(90deg, #000000, #007bff, #000000);
     padding: 1rem 1.5rem;
     color: white;
     text-decoration: none;
@@ -412,7 +412,9 @@ transform: rotate(180deg);
 .hero-right .h-img img{
     width: 140%;
 }
-
+b{
+    color: #007bff;
+}
 @media (max-width: 900px) {
     .hero-section{
         grid-template-columns: 100%;
@@ -678,7 +680,7 @@ transform: rotate(180deg);
     width: 100vw;
     display: grid;
     place-items: center;
-    background: linear-gradient(90deg, #000000, #ba0c24, #000000);
+    background: linear-gradient(90deg, #000000, #007bff, #000000);
     padding: 2rem;
 }
 .trust-line h2{
@@ -940,7 +942,7 @@ transform: rotate(180deg);
 button.youtube-button {
 font-family: inherit;
 font-size: small;
-background: linear-gradient(to bottom, #ff0000 0%, #ff5050 100%);
+background: linear-gradient(to bottom, #007bff 0%, #69b2ff 100%);
 color: white;
 padding: 0.5em 0.8em;
 display: flex;
@@ -1037,7 +1039,7 @@ display: grid;
 place-items: center;
 padding: 2rem;
 font-size: x-large;
-background: linear-gradient(90deg, #000000, #ba0c24, #000000);
+background: linear-gradient(90deg, #000000, #007bff, #000000);
 text-align: center;
 color: white;
 }
