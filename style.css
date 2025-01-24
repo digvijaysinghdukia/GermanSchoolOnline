@@ -935,6 +935,7 @@ transform: rotate(180deg);
 }
 .feed-card-text p{
     font-size: smaller;
+    text-align: justify;
 }
 .feed-card-text{
     width: 1;
