@@ -549,7 +549,10 @@ transform: rotate(180deg);
     width: 100%;
     }
 
-
+    .b-l-con h2{
+        font-size: xx-large;
+        font-weight: 300;
+    }
 }
 
 
