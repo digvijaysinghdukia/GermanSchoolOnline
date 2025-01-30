@@ -374,7 +374,7 @@ transform: rotate(180deg);
 }
 
 .hero-left h1{
-    font-size: xx-large;
+    font-size: xxx-large;
     font-weight: 300;
 }
 .hero-left p{
@@ -435,7 +435,7 @@ transform: rotate(180deg);
         padding: 1rem;
         overflow: hidden;
     }
-    .hero-left h2{
+    .hero-left h1{
         font-size: xx-large;
         font-weight: 300;
     }
