@@ -945,7 +945,7 @@ transform: rotate(180deg);
 button.youtube-button {
 font-family: inherit;
 font-size: small;
-background: linear-gradient(to bottom, #ff0000 0%, #ff5050 100%);
+background: linear-gradient(90deg, #000000, #ba0c24, #000000);
 color: white;
 padding: 0.5em 0.8em;
 display: flex;
